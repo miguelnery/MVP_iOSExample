@@ -1,25 +1,13 @@
 import UIKit
-import SnapKit
-
-class EditDetailsViewController: UIViewController {
-    private let loginView = EditProfileView()
-    
-    override func loadView() {
-        view = loginView
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        view.backgroundColor = .cyan
-    }
-}
 
 class EditProfileView: UIView {
-    private let nicknameTextField = LabeledTextField()
-    private let favoriteThingTextField = LabeledTextField()
+    private let nicknameTextField = LabeledTextField(fieldTag: FieldIdentifier.nickName.rawValue)
+    private let favoriteThingTextField = LabeledTextField(fieldTag: FieldIdentifier.favoriteThing.rawValue)
     private let submitButton = UIButton()
+    private unowned let delegate: EditProfileViewDelegate
     
-    init() {
+    init(delegate: EditProfileViewDelegate) {
+        self.delegate = delegate
         super.init(frame: .zero)
         setupView()
     }
@@ -27,6 +15,27 @@ class EditProfileView: UIView {
     @available(*, unavailable)
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    @objc func didTapSubmitButton() {
+        delegate.didTapSubmitButton()
+    }
+    
+    enum FieldIdentifier: Int {
+        case nickName = 0
+        case favoriteThing = 1
+    }
+}
+
+extension EditProfileView: UITextFieldDelegate {
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        guard let fieldId = FieldIdentifier(rawValue: textField.tag) else {
+            print("Could not identify textField")
+            return true
+        }
+        // maybe add some rules here before delegate call
+        delegate.didEditTextfield(identifiedBy: fieldId, text: textField.text!)
+        return true
     }
 }
 
@@ -64,56 +73,20 @@ extension EditProfileView: ViewCode {
         submitButton.backgroundColor = .yellow
         submitButton.setTitle("Submit", for: .normal)
         submitButton.setTitleColor(.black, for: .normal)
+        submitButton.addTarget(self, action: #selector(didTapSubmitButton), for: .touchUpInside)
         
         nicknameTextField.titleLabel.text = "Nickname"
         nicknameTextField.titleLabel.textColor = .black
+        nicknameTextField.textField.delegate = self
         
         favoriteThingTextField.titleLabel.text = "Favorite thing"
         favoriteThingTextField.titleLabel.textColor = .black
-        
-        
+        favoriteThingTextField.textField.delegate = self
     }
 }
 
-class LabeledTextField: UIView {
-    let titleLabel = UILabel()
-    let textField = UITextField()
-    
-    init() {
-        super.init(frame: .zero)
-        setupView()
-    }
-    
-    @available(*, unavailable)
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
+protocol EditProfileViewDelegate: class {
+    func didTapSubmitButton()
+    func didEditTextfield(identifiedBy: EditProfileView.FieldIdentifier, text: String)
 }
 
-extension LabeledTextField: ViewCode {
-    func addViews() {
-        addSubview(titleLabel)
-        addSubview(textField)
-    }
-    
-    func addConstraints() {
-        titleLabel.snp.makeConstraints {
-            $0.leading.equalToSuperview()
-            $0.trailing.equalToSuperview()
-            $0.top.equalToSuperview()
-            $0.height.equalToSuperview().multipliedBy(0.3)
-        }
-        
-        textField.snp.makeConstraints {
-            $0.leading.equalToSuperview()
-            $0.trailing.equalToSuperview()
-            $0.top.equalTo(titleLabel.snp.bottom)
-            $0.bottom.equalToSuperview()
-        }
-    }
-    
-    func additionalSetup() {
-        titleLabel.backgroundColor = .red
-        textField.backgroundColor = .blue
-    }
-}
