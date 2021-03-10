@@ -12,7 +12,6 @@
 		71142D2325F83D17004E9FC9 /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71142D2225F83D17004E9FC9 /* EditProfileViewController.swift */; };
 		71142D2825F83D1A004E9FC9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 71142D2725F83D1A004E9FC9 /* Assets.xcassets */; };
 		71142D2B25F83D1A004E9FC9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71142D2925F83D1A004E9FC9 /* LaunchScreen.storyboard */; };
-		71142D3625F83D1A004E9FC9 /* MVPTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71142D3525F83D1A004E9FC9 /* MVPTests.swift */; };
 		71142D4125F83D1A004E9FC9 /* MVPUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71142D4025F83D1A004E9FC9 /* MVPUITests.swift */; };
 		71142D5825F842A1004E9FC9 /* ViewCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71142D5725F842A1004E9FC9 /* ViewCode.swift */; };
 		71142D5E25F84407004E9FC9 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 71142D5D25F84407004E9FC9 /* SnapKit */; };
@@ -23,6 +22,10 @@
 		7189B15E25F8745B007DD1FE /* EditProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7189B15D25F8745B007DD1FE /* EditProfileView.swift */; };
 		7189B16425F874A0007DD1FE /* LabeledTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7189B16325F874A0007DD1FE /* LabeledTextField.swift */; };
 		71D1986A25F953250007B498 /* EditProfileCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D1986925F953250007B498 /* EditProfileCoordinator.swift */; };
+		71D1987325F966CF0007B498 /* EditProfilePresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D1987225F966CF0007B498 /* EditProfilePresenterTests.swift */; };
+		71D1988225F972A50007B498 /* ProfileValidatorTypeMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D1988125F972A50007B498 /* ProfileValidatorTypeMock.swift */; };
+		71D1988725F9731D0007B498 /* EditProfileSubmitStuffTypeMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D1988625F9731D0007B498 /* EditProfileSubmitStuffTypeMock.swift */; };
+		71D1988C25F9738B0007B498 /* EditProfileViewControllerTypeMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D1988B25F9738B0007B498 /* EditProfileViewControllerTypeMock.swift */; };
 		71FC481625F922670095D69B /* EditProfileSubmitStuff.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71FC481525F922670095D69B /* EditProfileSubmitStuff.swift */; };
 /* End PBXBuildFile section */
 
@@ -52,7 +55,6 @@
 		71142D2A25F83D1A004E9FC9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		71142D2C25F83D1A004E9FC9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		71142D3125F83D1A004E9FC9 /* MVPTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MVPTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		71142D3525F83D1A004E9FC9 /* MVPTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVPTests.swift; sourceTree = "<group>"; };
 		71142D3725F83D1A004E9FC9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		71142D3C25F83D1A004E9FC9 /* MVPUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MVPUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		71142D4025F83D1A004E9FC9 /* MVPUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVPUITests.swift; sourceTree = "<group>"; };
@@ -65,6 +67,10 @@
 		7189B15D25F8745B007DD1FE /* EditProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileView.swift; sourceTree = "<group>"; };
 		7189B16325F874A0007DD1FE /* LabeledTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabeledTextField.swift; sourceTree = "<group>"; };
 		71D1986925F953250007B498 /* EditProfileCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileCoordinator.swift; sourceTree = "<group>"; };
+		71D1987225F966CF0007B498 /* EditProfilePresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfilePresenterTests.swift; sourceTree = "<group>"; };
+		71D1988125F972A50007B498 /* ProfileValidatorTypeMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileValidatorTypeMock.swift; sourceTree = "<group>"; };
+		71D1988625F9731D0007B498 /* EditProfileSubmitStuffTypeMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileSubmitStuffTypeMock.swift; sourceTree = "<group>"; };
+		71D1988B25F9738B0007B498 /* EditProfileViewControllerTypeMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewControllerTypeMock.swift; sourceTree = "<group>"; };
 		71FC481525F922670095D69B /* EditProfileSubmitStuff.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileSubmitStuff.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -129,7 +135,7 @@
 		71142D3425F83D1A004E9FC9 /* MVPTests */ = {
 			isa = PBXGroup;
 			children = (
-				71142D3525F83D1A004E9FC9 /* MVPTests.swift */,
+				71D1987125F966B80007B498 /* EditProfile */,
 				71142D3725F83D1A004E9FC9 /* Info.plist */,
 			);
 			path = MVPTests;
@@ -192,6 +198,25 @@
 				71142D2C25F83D1A004E9FC9 /* Info.plist */,
 			);
 			path = App;
+			sourceTree = "<group>";
+		};
+		71D1987125F966B80007B498 /* EditProfile */ = {
+			isa = PBXGroup;
+			children = (
+				71D1987D25F969D70007B498 /* Support */,
+				71D1987225F966CF0007B498 /* EditProfilePresenterTests.swift */,
+			);
+			path = EditProfile;
+			sourceTree = "<group>";
+		};
+		71D1987D25F969D70007B498 /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				71D1988125F972A50007B498 /* ProfileValidatorTypeMock.swift */,
+				71D1988625F9731D0007B498 /* EditProfileSubmitStuffTypeMock.swift */,
+				71D1988B25F9738B0007B498 /* EditProfileViewControllerTypeMock.swift */,
+			);
+			path = Support;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -267,6 +292,7 @@
 					};
 					71142D3025F83D1A004E9FC9 = {
 						CreatedOnToolsVersion = 12.4;
+						LastSwiftMigration = 1240;
 						TestTargetID = 71142D1A25F83D17004E9FC9;
 					};
 					71142D3B25F83D1A004E9FC9 = {
@@ -348,7 +374,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				71142D3625F83D1A004E9FC9 /* MVPTests.swift in Sources */,
+				71D1988C25F9738B0007B498 /* EditProfileViewControllerTypeMock.swift in Sources */,
+				71D1988225F972A50007B498 /* ProfileValidatorTypeMock.swift in Sources */,
+				71D1988725F9731D0007B498 /* EditProfileSubmitStuffTypeMock.swift in Sources */,
+				71D1987325F966CF0007B498 /* EditProfilePresenterTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -544,6 +573,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = MVPTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
@@ -554,6 +584,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = honey.MVPTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MVP.app/MVP";
@@ -565,6 +596,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = MVPTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
