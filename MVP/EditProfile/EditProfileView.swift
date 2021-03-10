@@ -1,5 +1,6 @@
 import UIKit
 
+
 class EditProfileView: UIView {
     private let nicknameTextField = LabeledTextField(fieldTag: FieldIdentifier.nickName.rawValue)
     private let favoriteThingTextField = LabeledTextField(fieldTag: FieldIdentifier.favoriteThing.rawValue)
@@ -15,6 +16,11 @@ class EditProfileView: UIView {
     @available(*, unavailable)
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    func setup(with profile: Profile) {
+        nicknameTextField.textField.text = profile.nickname
+        favoriteThingTextField.textField.text = profile.favoriteThing
     }
     
     @objc func didTapSubmitButton() {
@@ -87,6 +93,6 @@ extension EditProfileView: ViewCode {
 
 protocol EditProfileViewDelegate: class {
     func didTapSubmitButton()
-    func didEditTextfield(identifiedBy: EditProfileView.FieldIdentifier, text: String)
+    func didEditTextfield(identifiedBy fieldId: EditProfileView.FieldIdentifier, text: String)
 }
 

@@ -3,6 +3,7 @@ import SnapKit
 
 
 protocol EditProfileViewControllerType: class {
+    func setup(with profile: Profile)
     func showNicknameError()
     func showFavoriteThingError()
     func showSubmissionError(_ error: ProfileValidationError)
@@ -11,14 +12,15 @@ protocol EditProfileViewControllerType: class {
 
 class EditProfileViewController: UIViewController {
     private let presenter: EditProfilePresenterType
-    private let loginView = EditProfileView()
+    private lazy var editProfileView = EditProfileView(delegate: self)
     private unowned let delegate: EditProfileViewControllerDelegate
     
-    init(presenter: EditProfilePresenterType,
-         delegate: EditProfileViewControllerDelegate) {
-        self.presenter = presenter
+    init(delegate: EditProfileViewControllerDelegate,
+         presenter: EditProfilePresenterType) {
         self.delegate = delegate
+        self.presenter = presenter
         super.init(nibName: nil, bundle: nil)
+        self.presenter.attach(to: self)
     }
     
     @available(*, unavailable)
@@ -27,7 +29,7 @@ class EditProfileViewController: UIViewController {
     }
     
     override func loadView() {
-        view = loginView
+        view = editProfileView
     }
     
     override func viewDidLoad() {
@@ -37,6 +39,10 @@ class EditProfileViewController: UIViewController {
 }
 
 extension EditProfileViewController: EditProfileViewControllerType {
+    func setup(with profile: Profile) {
+        editProfileView.setup(with: profile)
+    }
+    
     func showNicknameError() {
         print("error on nickname field")
     }
@@ -51,6 +57,21 @@ extension EditProfileViewController: EditProfileViewControllerType {
     
     func didFinishEditingProfile() {
         delegate.didFinishEditing()
+    }
+}
+
+extension EditProfileViewController: EditProfileViewDelegate {
+    func didTapSubmitButton() {
+        
+    }
+    
+    func didEditTextfield(identifiedBy fieldId: EditProfileView.FieldIdentifier, text: String) {
+        switch fieldId {
+        case .nickName:
+            presenter.evaluate(nickname: text)
+        case .favoriteThing:
+            presenter.evaluate(favoriteThing: text)
+        }
     }
 }
 
