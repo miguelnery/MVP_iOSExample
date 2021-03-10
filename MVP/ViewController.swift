@@ -2,7 +2,7 @@ import UIKit
 import SnapKit
 
 class ViewController: UIViewController {
-    private let loginView = LoginView()
+    private let loginView = EditProfileView()
     
     override func loadView() {
         view = loginView
@@ -14,9 +14,9 @@ class ViewController: UIViewController {
     }
 }
 
-class LoginView: UIView {
-    private let userTextField = LabeledTextField()
-    private let passwordTextField = LabeledTextField()
+class EditProfileView: UIView {
+    private let nicknameTextField = LabeledTextField()
+    private let favoriteThingTextField = LabeledTextField()
     private let submitButton = UIButton()
     
     init() {
@@ -30,33 +30,33 @@ class LoginView: UIView {
     }
 }
 
-extension LoginView: ViewCode {
+extension EditProfileView: ViewCode {
     func addViews() {
-        addSubview(userTextField)
-        addSubview(passwordTextField)
+        addSubview(nicknameTextField)
+        addSubview(favoriteThingTextField)
         addSubview(submitButton)
     }
     
     func addConstraints() {
-        userTextField.snp.makeConstraints {
+        nicknameTextField.snp.makeConstraints {
             $0.centerX.equalToSuperview()
             $0.width.equalToSuperview().multipliedBy(0.6)
             $0.height.equalToSuperview().multipliedBy(0.06)
             $0.top.equalTo(snp.centerY).multipliedBy(0.85)
         }
         
-        passwordTextField.snp.makeConstraints {
+        favoriteThingTextField.snp.makeConstraints {
             $0.centerX.equalToSuperview()
             $0.width.equalToSuperview().multipliedBy(0.6)
             $0.height.equalToSuperview().multipliedBy(0.06)
-            $0.top.equalTo(userTextField.snp.bottom).offset(15)
+            $0.top.equalTo(nicknameTextField.snp.bottom).offset(15)
         }
         
         submitButton.snp.makeConstraints {
             $0.centerX.equalToSuperview()
             $0.width.equalToSuperview().multipliedBy(0.4)
             $0.height.equalToSuperview().multipliedBy(0.07)
-            $0.top.equalTo(passwordTextField.snp.bottom).offset(15)
+            $0.top.equalTo(favoriteThingTextField.snp.bottom).offset(15)
         }
     }
     
@@ -65,11 +65,11 @@ extension LoginView: ViewCode {
         submitButton.setTitle("Submit", for: .normal)
         submitButton.setTitleColor(.black, for: .normal)
         
-        userTextField.titleLabel.text = "Login"
-        userTextField.titleLabel.textColor = .black
+        nicknameTextField.titleLabel.text = "Nickname"
+        nicknameTextField.titleLabel.textColor = .black
         
-        passwordTextField.titleLabel.text = "Password"
-        passwordTextField.titleLabel.textColor = .black
+        favoriteThingTextField.titleLabel.text = "Favorite thing"
+        favoriteThingTextField.titleLabel.textColor = .black
         
         
     }
