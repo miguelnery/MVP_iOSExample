@@ -34,18 +34,27 @@ extension EditProfilePresenter: EditProfilePresenterType {
     
     func evaluate(nickname: String) {
         profile = Profile(nickname: nickname, favoriteThing: profile.favoriteThing)
-        guard let _ = profileValidator.validate(nickname: nickname) else { return }
+        guard case .something = profileValidator.validate(profile: profile) else { return }
         viewController?.showNicknameError()
     }
     
     func evaluate(favoriteThing: String) {
         profile = Profile(nickname: profile.nickname, favoriteThing: favoriteThing)
-        guard let _ = profileValidator.validate(favoriteThing: favoriteThing) else { return }
+        guard case .otherThing = profileValidator.validate(profile: profile) else { return }
         viewController?.showFavoriteThingError()
     }
     
     func attach(to viewController: EditProfileViewControllerType) {
         viewController.setup(with: profile)
         self.viewController = viewController
+    }
+}
+
+extension EditProfilePresenter {
+    static func make() -> EditProfilePresenter {
+        return EditProfilePresenter(profile: Profile(nickname: "name",
+                                                     favoriteThing: "shrek"),
+                                    profileValidator: ProfileValidator(),
+                                    submitStuff: EditProfileSubmitStuff())
     }
 }

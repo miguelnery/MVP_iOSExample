@@ -22,6 +22,7 @@
 		7189B15925F8741E007DD1FE /* EditProfilePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7189B15825F8741E007DD1FE /* EditProfilePresenter.swift */; };
 		7189B15E25F8745B007DD1FE /* EditProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7189B15D25F8745B007DD1FE /* EditProfileView.swift */; };
 		7189B16425F874A0007DD1FE /* LabeledTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7189B16325F874A0007DD1FE /* LabeledTextField.swift */; };
+		71D1986A25F953250007B498 /* EditProfileCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D1986925F953250007B498 /* EditProfileCoordinator.swift */; };
 		71FC481625F922670095D69B /* EditProfileSubmitStuff.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71FC481525F922670095D69B /* EditProfileSubmitStuff.swift */; };
 /* End PBXBuildFile section */
 
@@ -63,6 +64,7 @@
 		7189B15825F8741E007DD1FE /* EditProfilePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfilePresenter.swift; sourceTree = "<group>"; };
 		7189B15D25F8745B007DD1FE /* EditProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileView.swift; sourceTree = "<group>"; };
 		7189B16325F874A0007DD1FE /* LabeledTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabeledTextField.swift; sourceTree = "<group>"; };
+		71D1986925F953250007B498 /* EditProfileCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileCoordinator.swift; sourceTree = "<group>"; };
 		71FC481525F922670095D69B /* EditProfileSubmitStuff.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileSubmitStuff.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -166,6 +168,7 @@
 				7189B15D25F8745B007DD1FE /* EditProfileView.swift */,
 				71142D2225F83D17004E9FC9 /* EditProfileViewController.swift */,
 				71FC481525F922670095D69B /* EditProfileSubmitStuff.swift */,
+				71D1986925F953250007B498 /* EditProfileCoordinator.swift */,
 			);
 			path = EditProfile;
 			sourceTree = "<group>";
@@ -328,6 +331,7 @@
 			files = (
 				7189B15E25F8745B007DD1FE /* EditProfileView.swift in Sources */,
 				71142D2325F83D17004E9FC9 /* EditProfileViewController.swift in Sources */,
+				71D1986A25F953250007B498 /* EditProfileCoordinator.swift in Sources */,
 				7189B14225F873A1007DD1FE /* Profile.swift in Sources */,
 				7189B14B25F873D6007DD1FE /* ProfileValidator.swift in Sources */,
 				71142D1F25F83D17004E9FC9 /* AppDelegate.swift in Sources */,

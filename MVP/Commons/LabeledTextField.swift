@@ -3,12 +3,11 @@ import UIKit
 class LabeledTextField: UIView {
     let titleLabel = UILabel()
     let textField = UITextField()
-    var fieldTag: Int { textField.tag }
     
     init(fieldTag: Int) {
         super.init(frame: .zero)
         setupView()
-        textField.tag = tag
+        textField.tag = fieldTag
     }
     
     @available(*, unavailable)

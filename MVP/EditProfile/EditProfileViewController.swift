@@ -10,6 +10,10 @@ protocol EditProfileViewControllerType: class {
     func didFinishEditingProfile()
 }
 
+protocol EditProfileViewControllerDelegate: class {
+    func didFinishEditing()
+}
+
 class EditProfileViewController: UIViewController {
     private let presenter: EditProfilePresenterType
     private lazy var editProfileView = EditProfileView(delegate: self)
@@ -48,7 +52,7 @@ extension EditProfileViewController: EditProfileViewControllerType {
     }
     
     func showFavoriteThingError() {
-        print("error on nickname field")
+        print("error on favorite thing field")
     }
     
     func showSubmissionError(_ error: ProfileValidationError) {
@@ -62,7 +66,7 @@ extension EditProfileViewController: EditProfileViewControllerType {
 
 extension EditProfileViewController: EditProfileViewDelegate {
     func didTapSubmitButton() {
-        
+        presenter.submit()
     }
     
     func didEditTextfield(identifiedBy fieldId: EditProfileView.FieldIdentifier, text: String) {
@@ -73,8 +77,4 @@ extension EditProfileViewController: EditProfileViewDelegate {
             presenter.evaluate(favoriteThing: text)
         }
     }
-}
-
-protocol EditProfileViewControllerDelegate: class {
-    func didFinishEditing()
 }
