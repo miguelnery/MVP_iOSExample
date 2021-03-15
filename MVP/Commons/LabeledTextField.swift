@@ -4,8 +4,8 @@ class LabeledTextField: UIView {
     let titleLabel = UILabel()
     let textField = UITextField()
     
-    init(fieldTag: Int) {
-        super.init(frame: .zero)
+    init(fieldTag: Int, frame: CGRect = .zero) {
+        super.init(frame: frame)
         setupView()
         textField.tag = fieldTag
     }
